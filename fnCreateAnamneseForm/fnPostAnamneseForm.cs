@@ -21,7 +21,7 @@ namespace fnCreateAnamneseForm
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req)
         {
-            _logger.LogInformation("Função C# HTTP POST acionada.");
+            _logger.LogInformation("Função fnPostAnamneseForm HTTP POST acionada.");
 
             string connectionString = System.Environment.GetEnvironmentVariable("MONGODB_CONNECTION_STRING");
             string databaseName = System.Environment.GetEnvironmentVariable("MONGODB_DATABASE_NAME");
