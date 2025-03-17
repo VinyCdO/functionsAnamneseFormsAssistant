@@ -48,6 +48,9 @@ namespace fnCreateAnamneseForm
                 {                    
                     var regex = new BsonRegularExpression(new Regex(nome, RegexOptions.IgnoreCase));
                     filter = Builders<BsonDocument>.Filter.Regex("nome", regex);
+                } else
+                {
+                    filter = Builders<BsonDocument>.Filter.Empty;
                 }
 
                 var documents = await collection.Find(filter).ToListAsync();
