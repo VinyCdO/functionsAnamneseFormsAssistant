@@ -10,16 +10,16 @@ namespace fnCreateAnamneseForm
 {
     public class fnPutAddSignedFormLink
     {
-        private readonly ILogger<fnPostAnamneseForm> _logger;
+        private readonly ILogger<fnPutAddSignedFormLink> _logger;
 
-        public fnPutAddSignedFormLink(ILogger<fnPostAnamneseForm> logger)
+        public fnPutAddSignedFormLink(ILogger<fnPutAddSignedFormLink> logger)
         {
             _logger = logger;
         }
 
         [Function("fnPutAddSignedFormLink")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "put", Route = "{id}")] HttpRequest req, string id)
+            [HttpTrigger(AuthorizationLevel.Function, "put", Route = "fnPutAddSignedFormLink/{id}")] HttpRequest req, string id)
         {
             _logger.LogInformation("Função fnPutAddSignedFormLink HTTP PUT acionada.");
 
